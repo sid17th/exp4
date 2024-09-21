@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .hero-section {
+      background-image: linear-gradient(to right, #ff0000, #0000ff); 
+      color: rgb(255, 255, 255);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 100px;
+    }
+    .experiment-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn-experiment {
+            cursor: pointer;
+            padding: 20px;
+            background-color: #00aeff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 50px;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .btn-experiment:hover {
+            background-color: #0056b3;
+        }
+        .experiment {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 200px;
+            display: none;
+        }
+        .experiment h2 {
+            margin-top: 0;
+        }
+        .note {
+            font-style: italic;
+            color: #666;
+        }
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Student Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Experiments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>I'm Spider Man</h1>
+      <p> Web-Developer</p>
+      <a href="#projects" class="btn btn-primary btn-lg">View My Experiments</a>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about" class="container my-5">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="spider.PNG" class="img-fluid rounded-circle" alt="Profile Picture">
+      </div>
+      <div class="col-md-8 d-flex align-items-center">
+        <div>
+          <h2>About Me</h2>
+          <p>I am a passionate student with a strong interest in [ e.g., web development, data science, AI]. I have worked on several projects, gaining hands-on experience in various programming languages and tools. I'm always eager to learn and grow in my field of expertise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Expeiments-->
+  <section id="projects" class="container my-5">
+  <div class="container">
+    <div class="experiment-buttons">
+      <h2>Experiments</h2>
+      <h2> </h2>
+        <button class="btn-experiment" onclick="showExperiment(1)">Experiment 1</button>
+        <button class="btn-experiment" onclick="showExperiment(2)">Experiment 2</button>
+        <button class="btn-experiment" onclick="showExperiment(3)">Experiment 3</button>
+    </div>
+    <div id="experiment1" class="experiment">
+        <h2>Experiment 1: Finding Roots of Quadratic Equation Using Java</h2>
+        <p>This experiment demonstrates the execution of finding roots of a quadratic equation using Java. The Java code takes the coefficients of the quadratic equation and calculates the roots using the quadratic formula.</p>
+        <pre><code>
+public class QuadraticRoots {
+public static void main(String[] args) {
+    double a = 1, b = -3, c = 2;
+    double discriminant = b * b - 4 * a * c;
+    if (discriminant > 0) {
+        double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        System.out.println("Roots are " + root1 + " and " + root2);
+    } else if (discriminant == 0) {
+        double root = -b / (2 * a);
+        System.out.println("Root is " + root);
+    } else {
+        System.out.println("Complex roots");
+    }
+}
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>Roots are 2.0 and 1.0</code></pre>
+    </div>
+    <div id="experiment2" class="experiment">
+        <h2>Experiment 2: Generation of Prime Numbers from 1 to 100 Using Java</h2>
+        <p>This experiment shows the execution of generating prime numbers between 1 and 100 using Java. The code checks each number in the range and determines if it is a prime number.</p>
+        <pre><code>
+public class PrimeNumbers {
+public static void main(String[] args) {
+    for (int i = 2; i <= 100; i++) {
+        boolean isPrime = true;
+        for (int j = 2; j <= Math.sqrt(i); j++) {
+            if (i % j == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            System.out.print(i + " ");
+        }
+    }
+}
+}
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97</code></pre>
+    </div>
+    <div id="experiment3" class="experiment">
+        <h2>Experiment 3: Study of Functions in JavaScript</h2>
+        <p>This experiment demonstrates various types of functions in JavaScript:</p>
+        <ul>
+            <li><strong>Function as Object:</strong> Functions can be treated as objects in JavaScript.</li>
+            <li><strong>Arrow Function:</strong> A concise syntax for writing functions.</li>
+            <li><strong>Inner Function:</strong> Functions defined inside other functions.</li>
+            <li><strong>Anonymous Function:</strong> Functions that do not have a name.</li>
+        </ul>
+        <pre><code>
+function functionAsObject() {
+console.log("This is a function object");
+}
+functionAsObject.prop = "I am a property";
+console.log(functionAsObject.prop);
+
+const arrowFunction = () => {
+console.log("This is an arrow function");
+};
+
+function outerFunction() {
+function innerFunction() {
+    console.log("This is an inner function");
+}
+innerFunction();
+}
+
+const anonymousFunction = function() {
+console.log("This is an anonymous function");
+};
+anonymousFunction();
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code>
+This is a function object
+I am a property
+This is an arrow function
+This is an inner function
+This is an anonymous function
+        </code></pre>
+    </div>
+</div>
+<script>
+  function showExperiment(experimentNumber) {
+      // Hide all experiments
+      var experiments = document.querySelectorAll('.experiment');
+      experiments.forEach(exp => exp.style.display = 'none');
+      // Show the selected experiment
+      var selectedExperiment = document.getElementById('experiment' + experimentNumber);
+      if (selectedExperiment) {
+          selectedExperiment.style.display = 'block';
+      }
+  }
+</script>
+</section>
+  <!-- Skills Section -->
+  <section id="skills" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Skills</h2>
+      <div class="row text-center">
+        <div class="col-md-3">
+          <i class="bi bi-code-slash" style="font-size: 2rem;"></i>
+          <h4>Programming Languages</h4>
+          <p>Python, Java, C++, JavaScript</p>
+        </div>
+        <div class="col-md-3">
+          <i class="bi bi-pc-display" style="font-size: 2rem;"></i>
+          <h4>Web Development</h4>
+          <p>HTML, CSS, Bootstrap, React</p>
+        </div>
+        <div class="col-md-3">
+          <i class="bi bi-diagram-3" style="font-size: 2rem;"></i>
+          <h4>Data Analysis</h4>
+          <p>Pandas, NumPy, Excel</p>
+        </div>
+        <div class="col-md-3">
+          <i class="bi bi-server" style="font-size: 2rem;"></i>
+          <h4>Database</h4>
+          <p>MySQL, MongoDB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  
+</body>
+</html>
+<!--made by Siddharth Jadhav-->
